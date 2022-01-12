@@ -12,7 +12,11 @@ const LogoBox = styled.span`
   line-height: 20px;
   padding: 10px;
 
-  &:hover {
+  img {
+    transition: 200ms ease;
+  }
+
+  &:hover img{
     transform: rotate(20deg);
   }
 `
@@ -26,7 +30,7 @@ const Logo = () => {
           <Image src={footPrintImg} width={20} height={20} alt="logo"/>
           <Text
             color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-            fontFamily='M PLUS Rounded 1c'
+            fontFamily='M PLUS Rounded 1c", sans-serif'
             fontWeight="bold"
             ml={3}
           >
