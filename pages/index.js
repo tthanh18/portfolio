@@ -4,12 +4,22 @@ import {
   Heading,
   Image,
   useColorModeValue,
-  Button
+  Button,
+  Link,
+  List,
+  ListItem,
+  Icon,
+  SimpleGrid
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
 import Section from '../components/section'
+import { BioSection, BioYear } from '../components/bio'
+import { GridItem } from '../components/grid-item'
+import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
+import thumbYouTube from '../public/images/avatar.png'
+import thumbInkdrop from '../public/images/avatar.png'
 
 const Page = () => {
   return (
@@ -43,7 +53,7 @@ const Page = () => {
             borderStyle="solid"
             maxWidth="100px"
             borderRadius="full"
-            src="/images/avatar.jpg"
+            src="/images/avatar.png"
             alt="Profile image"
           />
         </Box>
@@ -60,12 +70,110 @@ const Page = () => {
           aliquip ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          culpa qui officia deserunt mollit anim id est laborum{' '}
+          <NextLink href="/">
+            <Link>Link</Link>
+          </NextLink>
+          .
         </Paragraph>
         <Box align="center" my={4}>
           <NextLink href="works">
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
               My portfolio
+            </Button>
+          </NextLink>
+        </Box>
+      </Section>
+
+      <Section delay={0.2}>
+        <Heading as="h3" variant="section-title">
+          Bio
+        </Heading>
+        <BioSection>
+          <BioYear>1999</BioYear>
+          Born in Ho Chi Minh City, VietNam.
+        </BioSection>
+      </Section>
+
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          Favorite
+        </Heading>
+        <Paragraph>Music</Paragraph>
+      </Section>
+
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          On the web
+        </Heading>
+        <List>
+          <ListItem>
+            <Link href="https://github.com/craftzdog" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Icon as={IoLogoGithub} />}
+              >
+                @craftzdog
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://twitter.com/inkdrop_app" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Icon as={IoLogoTwitter} />}
+              >
+                @inkdrop_app (English)
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://twitter.com/craftzdog" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Icon as={IoLogoTwitter} />}
+              >
+                @craftzdog (日本語)
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://instagram.com/craftzdog" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<Icon as={IoLogoInstagram} />}
+              >
+                @craftzdog
+              </Button>
+            </Link>
+          </ListItem>
+        </List>
+
+        <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          <GridItem
+            href="https://www.youtube.com/devaslife"
+            title="Dev as Life"
+            thumbnail={thumbYouTube}
+          >
+            My YouTube channel
+          </GridItem>
+          <GridItem
+            href="https://www.inkdrop.app/"
+            title="Inkdrop"
+            thumbnail={thumbInkdrop}
+          >
+            A Markdown note-taking app
+          </GridItem>
+        </SimpleGrid>
+
+        <Box align="center" my={4}>
+          <NextLink href="/posts">
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              Popular posts
             </Button>
           </NextLink>
         </Box>
