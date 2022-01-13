@@ -108,18 +108,18 @@ const Page = () => {
         </Heading>
         <List>
           <ListItem>
-            <Link href="https://github.com/craftzdog" target="_blank">
+            <Link href="" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
                 leftIcon={<Icon as={IoLogoGithub} />}
               >
-                @craftzdog
+                @ngtthanh18
               </Button>
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="https://twitter.com/inkdrop_app" target="_blank">
+            <Link href="" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
@@ -129,40 +129,18 @@ const Page = () => {
               </Button>
             </Link>
           </ListItem>
-          <ListItem>
-            <Link href="https://twitter.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<Icon as={IoLogoTwitter} />}
-              >
-                @craftzdog (日本語)
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://instagram.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<Icon as={IoLogoInstagram} />}
-              >
-                @craftzdog
-              </Button>
-            </Link>
-          </ListItem>
         </List>
 
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem
-            href="https://www.youtube.com/devaslife"
+            href="/"
             title="Dev as Life"
             thumbnail={thumbYouTube}
           >
             My YouTube channel
           </GridItem>
           <GridItem
-            href="https://www.inkdrop.app/"
+            href="/"
             title="Inkdrop"
             thumbnail={thumbInkdrop}
           >
